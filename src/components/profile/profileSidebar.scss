@@ -1,0 +1,33 @@
+@import '../../styles/style.scss';
+
+.profile-sidebar {
+   background-color: #232323;
+   padding: toRem(20);
+   border-radius: toRem(20);
+   flex: 0 0 250px;
+
+   &__image-ibg {
+      width: 100%;
+      padding-bottom: 100%;
+      margin-bottom: toRem(20);
+      img {
+         border-radius: toRem(30);
+      }
+   }
+
+   &__name {
+      font-size: toRem(25);
+      font-weight: 600;
+      margin-bottom: toRem(10);
+   }
+
+   &__email {
+      display: flex;
+      align-items: center;
+      column-gap: toRem(5);
+      svg {
+         width: 1.3em !important;
+         height: 1.3em !important;
+      }
+   }
+}

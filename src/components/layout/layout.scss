@@ -1,0 +1,13 @@
+.some {
+   &__container {
+      display: flex;
+      align-items: flex-start;
+   }
+}
+.sidebar {
+   flex: 1 1 15%;
+}
+.main {
+   flex: 1 1 100%;
+   padding: 0 25px;
+}

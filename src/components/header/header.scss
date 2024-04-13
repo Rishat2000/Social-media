@@ -1,0 +1,38 @@
+@import '../../styles/style.scss';
+
+.header {
+  padding: toRem(20) toRem(0);
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: toRem(20);
+    font-weight: 600;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(20);
+  }
+
+  &__theme {
+    svg {
+      height: 1.5em !important;
+      width: 1.5em !important;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(10);
+    padding: toRem(10);
+    border-radius: toRem(10);
+    transition: all 0.3s;
+  }
+}
