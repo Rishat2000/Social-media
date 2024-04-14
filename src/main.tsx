@@ -18,54 +18,54 @@ import AuthGuard from './features/user/authGuard';
 const container = document.getElementById('root');
 
 const router = createBrowserRouter([
-   {
-      path: '/auth',
-      element: <Auth />,
-   },
-   {
-      path: '/',
-      element: <Layout />,
-      children: [
-         {
-            path: '',
-            element: <Posts />,
-         },
-         {
-            path: 'posts/:id',
-            element: <CurrentPost />,
-         },
-         {
-            path: 'users/:id',
-            element: <UserProfile />,
-         },
-         {
-            path: 'followers',
-            element: <Followers />,
-         },
-         {
-            path: 'following',
-            element: <Following />,
-         },
-      ],
-   },
+  {
+    path: '/auth',
+    element: <Auth />,
+  },
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '',
+        element: <Posts />,
+      },
+      {
+        path: 'posts/:id',
+        element: <CurrentPost />,
+      },
+      {
+        path: 'users/:id',
+        element: <UserProfile />,
+      },
+      {
+        path: 'followers',
+        element: <Followers />,
+      },
+      {
+        path: 'following',
+        element: <Following />,
+      },
+    ],
+  },
 ]);
 
 if (container) {
-   const root = createRoot(container);
+  const root = createRoot(container);
 
-   root.render(
-      <React.StrictMode>
-         <Provider store={store}>
-            <ThemeProvider>
-               <AuthGuard>
-                  <RouterProvider router={router} />
-               </AuthGuard>
-            </ThemeProvider>
-         </Provider>
-      </React.StrictMode>,
-   );
+  root.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <ThemeProvider>
+          <AuthGuard>
+            <RouterProvider router={router} />
+          </AuthGuard>
+        </ThemeProvider>
+      </Provider>
+    </React.StrictMode>,
+  );
 } else {
-   throw new Error(
-      "Root element with ID 'root' was not found in the document. Ensure there is a corresponding HTML element with the ID 'root' in your HTML file.",
-   );
+  throw new Error(
+    "Root element with ID 'root' was not found in the document. Ensure there is a corresponding HTML element with the ID 'root' in your HTML file.",
+  );
 }

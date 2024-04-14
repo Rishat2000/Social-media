@@ -2,68 +2,68 @@
 @import '../../styles/common.scss';
 
 .auth-form {
-   background-color: #2d2c2cae;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   padding: toRem(30) toRem(20);
-   border-radius: toRem(15);
-   &__top {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      text-align: center;
-      background-color: #5d5c5c8e;
-      border-radius: toRem(10);
-      margin-bottom: toRem(30);
-   }
+  background-color: #2d2c2cae;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: toRem(30) toRem(20);
+  border-radius: toRem(15);
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+    background-color: #5d5c5c8e;
+    border-radius: toRem(10);
+    margin-bottom: toRem(30);
+  }
 
-   &__top-title {
-      padding: toRem(10) toRem(20);
-      border-radius: toRem(10);
-      cursor: pointer;
-      opacity: 0.5;
-      transition: all 0.3s;
-      position: relative;
-      &._active {
-         opacity: 1;
-         background-color: #333;
-      }
-   }
+  &__top-title {
+    padding: toRem(10) toRem(20);
+    border-radius: toRem(10);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s;
+    position: relative;
+    &._active {
+      opacity: 1;
+      background-color: #333;
+    }
+  }
 
-   &__body {
-   }
+  &__body {
+  }
 }
 
 .login-form {
-   min-height: toRem(350);
-   display: flex;
-   flex-direction: column;
-   row-gap: toRem(15);
-   &__inputs {
-      flex: 1 1 auto;
-   }
+  min-height: toRem(350);
+  display: flex;
+  flex-direction: column;
+  row-gap: toRem(15);
+  &__inputs {
+    flex: 1 1 auto;
+  }
 }
 
 label {
-   display: flex;
-   justify-content: flex-start;
-   flex-direction: column;
-   &:not(:last-child) {
-      margin-bottom: 10px;
-   }
-   input {
-      padding: toRem(10);
-      background-color: #5d5c5c8e;
-      border-radius: toRem(10);
-      margin-top: toRem(10);
-      color: #fff;
-      font-weight: 500;
-   }
-   span {
-      color: red;
-      margin-top: toRem(5);
-      font-weight: 600;
-   }
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  input {
+    padding: toRem(10);
+    background-color: #5d5c5c8e;
+    border-radius: toRem(10);
+    margin-top: toRem(10);
+    color: #fff;
+    font-weight: 500;
+  }
+  span {
+    color: red;
+    margin-top: toRem(5);
+    font-weight: 600;
+  }
 }

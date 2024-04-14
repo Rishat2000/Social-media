@@ -1,7 +1,7 @@
 export const formatToClientDate = (date?: Date) => {
   if (!date) {
-    return ''
+    return '';
   }
 
-  return new Date(date).toLocaleDateString()
-}
+  return new Date(date).toLocaleDateString();
+};

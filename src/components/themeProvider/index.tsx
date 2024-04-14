@@ -30,16 +30,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div
-        style={{
-          transition: 'background-color 0.2s',
-          minHeight: '100vh',
-          backgroundColor: `${theme === 'dark' ? '#0F0F0F' : '#fff'}`,
-          color: `${theme === 'dark' ? '#fff' : '#0F0F0F'}`,
-        }}
-      >
-        {children}
-      </div>
+      <>{children}</>
     </ThemeContext.Provider>
   );
 };

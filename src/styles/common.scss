@@ -1,30 +1,64 @@
 [class*='-ibg'] {
-   position: relative;
-   img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-   }
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
 }
 [class*='-ibg--contain'] {
-   img {
-      object-fit: contain;
-   }
+  img {
+    object-fit: contain;
+  }
 }
 
 .auth-button {
-   width: 100%;
-   background-color: rgb(85, 85, 239);
-   border-radius: toRem(10);
-   padding: toRem(15);
-   color: #fff;
-   transition: background-color 0.3s;
-   @media (any-hover: hover) {
-      &:hover {
-         background-color: rgb(65, 65, 249);
+  background-color: rgb(85, 85, 239);
+  border-radius: toRem(10);
+  padding: toRem(15);
+  color: #fff;
+  transition: background-color 0.3s;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: rgb(65, 65, 249);
+    }
+  }
+}
+
+.followers {
+  a {
+    display: flex;
+    align-items: flex-start;
+    column-gap: toRem(20);
+    border-radius: toRem(20);
+    background-color: #232323;
+    padding: toRem(10) toRem(20);
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+  &__image-ibg {
+    width: toRem(50);
+    padding-bottom: toRem(50);
+    overflow: hidden;
+    img {
+      border-radius: 50%;
+      background-color: #333;
+    }
+  }
+
+  &__info {
+    p {
+      &:first-child {
+        margin-bottom: toRem(5);
       }
-   }
+      &:last-child {
+        font-size: toRem(18);
+        color: #605f5f;
+      }
+    }
+  }
 }

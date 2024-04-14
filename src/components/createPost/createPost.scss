@@ -1,21 +1,31 @@
 @import '../../styles/style.scss';
 
 .create-post {
-   textarea {
-      width: 100%;
-      background-color: #232323;
-      color: #fff;
-      margin-bottom: toRem(15);
-      border-radius: toRem(10);
-      max-width: 100%;
-      height: 80px;
-      resize: none;
-      padding: toRem(10);
-   }
-   &__button {
-      display: flex;
-      align-items: center;
-      column-gap: toRem(10);
-      width: auto;
-   }
+  margin-bottom: toRem(50);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  textarea {
+    width: 100%;
+    background-color: #232323;
+    color: #fff;
+    margin-bottom: toRem(5);
+    border-radius: toRem(10);
+    max-width: 100%;
+    height: 80px;
+    resize: none;
+    padding: toRem(10);
+  }
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: toRem(10);
+  }
+  span {
+    display: inline-block;
+    color: red;
+    margin-bottom: toRem(5);
+    font-size: toRem(16);
+  }
 }
