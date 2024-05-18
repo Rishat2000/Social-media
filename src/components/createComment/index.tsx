@@ -1,14 +1,14 @@
 import { Controller, useForm } from 'react-hook-form';
 import { IoMdCreate } from 'react-icons/io';
-import {
-  useCreatePostMutation,
-  useLazyGetAllPostsQuery,
-} from '../../app/services/postsApi';
-import './createPost.scss';
+import { useParams } from 'react-router-dom';
+import { useCreateCommentMutation } from '../../app/services/commentsApi';
+import { useLazyGetPostByIdQuery } from '../../app/services/postsApi';
+import '../createPost/createPost.scss';
 
-export default function CreatePost() {
-  const [createPost] = useCreatePostMutation();
-  const [triggerAllPosts] = useLazyGetAllPostsQuery();
+export default function CreateComment() {
+  const { id } = useParams<{ id: string }>();
+  const [createComment] = useCreateCommentMutation();
+  const [getPostById] = useLazyGetPostByIdQuery();
 
   const {
     handleSubmit,
@@ -21,9 +21,11 @@ export default function CreatePost() {
 
   const onSubmit = handleSubmit(async data => {
     try {
-      await createPost({ content: data.post }).unwrap();
-      setValue('post', '');
-      await triggerAllPosts().unwrap();
+      if (id) {
+        await createComment({ content: data.comment, postId: id }).unwrap();
+        setValue('comment', '');
+        await getPostById(id).unwrap();
+      }
     } catch (error) {
       console.log(error);
     }
@@ -32,21 +34,21 @@ export default function CreatePost() {
   return (
     <form onSubmit={onSubmit} className="create-post">
       <Controller
-        name="post"
+        name="comment"
         control={control}
         defaultValue=""
         rules={{ required: 'Обязательное поле' }}
         render={({ field }) => (
           <textarea
             {...field}
-            placeholder="Какова мысля?"
+            placeholder="Какова мысля апосля?"
             className={errors.post ? 'input-error' : ''}
           />
         )}
       />
       <span>{errors && error}</span>
       <button className="create-post__button auth-button" type="submit">
-        Запостить <IoMdCreate />
+        Ответить <IoMdCreate />
       </button>
     </form>
   );
